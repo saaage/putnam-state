@@ -5,7 +5,8 @@
   "src/test"]
 
  :dependencies
- [[lilactown/hx "0.5.1"]]
+ [[lilactown/hx "0.5.1"]
+  [re-frame "0.10.6"]]
 
  :dev-http {3001 "public"}
 
