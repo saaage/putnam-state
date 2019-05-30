@@ -8,7 +8,13 @@
   (let [{:keys [update-user-context]} (use-context user-context)]
     [:button {:on-click #(update-user-context {:type       "LOGIN"
                                                :username   "John Administrator"
-                                               :privileges 10})
+                                               :privileges 10})} 
+     "login"]))
+
+(defnc reset
+  []
+  (let [{:keys [update-user-context]} (use-context user-context)]
+    [:button {:on-click #(update-user-context {:type       "LOGOUT"})
               :style {:margin-left "16px"
                       :margin-bottom "16px"}} 
-     "login"]))
+     "reset"]))
