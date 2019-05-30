@@ -4,7 +4,7 @@
 
 (defnc rf-login
   []
-  [:button {:on-click #(rf/dispatch-sync [:login {:username   "John Administrator"
+  [:button {:on-click #(rf/dispatch [:login {:username   "John Administrator"
                                             :privileges 10}])} 
    "login"])
 

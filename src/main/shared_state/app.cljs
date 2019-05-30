@@ -13,8 +13,8 @@
     (hx/f [component])
     (. js/document getElementById "app")))
 
+(rf/dispatch-sync [:initialize-user-db])
 
 (defn ^:dev/after-load init []
-  (rf/dispatch-sync [:initialize-user-db])
   (app-render root))
 
