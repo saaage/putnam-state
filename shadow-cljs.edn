@@ -1,0 +1,15 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ [[lilactown/hx "0.5.1"]]
+
+ :dev-http {3001 "public"}
+
+ :builds
+ {:run
+  {:target :browser
+   :modules {:main {:init-fn shared-state.app/init}}}}}
