@@ -19,7 +19,7 @@ Provides a way to share state that is considered to be global to a tree of React
 
 * caching database responses from graphql queries to speed up load times (handled by apollo *for free*, **use case \#2** above)
   * apollo utilizes local storage to cache server reponses, and automatically updates cached values to prevent stale data
-* state shared between components 
+* state shared between components
   * react provides a **primitive**, context, to handle state used by multiple components; re-frame **use case \#1** above
   * eg which concept/locations am I in? who is the current user?
 * simple UI state such as a menu being expanded or collapsed
@@ -37,11 +37,11 @@ Provides a way to share state that is considered to be global to a tree of React
 
 # When to use **re-frame** over **context**?
 * managing _high frequency_ (several times per second) global state updates **that are consumed by 100's of components**
-  * [Dan Abramov from React core team defines "high frequency"](https://github.com/facebook/react/issues/14110#issuecomment-458753958) 
+  * [Dan Abramov from React core team defines "high frequency"](https://github.com/facebook/react/issues/14110#issuecomment-458753958)
 * global state transitions are rapid/complex, and there is a need for high powered dev tools and time travel debugging (eg re-frame-10x)
   * re-frame-10x allows devs to step through complex action history and data changes, viewing the app in the context of each
-  
-  
+
+
 # Conclusion
 ## Rely on defaults that prefer less complexity, and when moving away from defaults pick the best tool based on the use case.
 * React apps should **prefer local state** until global state is needed
@@ -50,8 +50,8 @@ Provides a way to share state that is considered to be global to a tree of React
 * Each solution can and _should_ be used side by side in a single application
 
 ### additional links
-[you might not need redux, Dan Abramov](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
-[application structure for larger re-frame apps](https://github.com/Day8/re-frame/blob/master/docs/Basic-App-Structure.md#larger-apps)
-[redux comparison](https://www.learnreframe.com/)
-[todomvc example](https://github.com/Day8/re-frame/tree/master/examples/todomvc)
-[simple re-frame example](https://github.com/Day8/re-frame/blob/master/examples/simple/project.clj)
+* [you might not need redux, Dan Abramov](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+* [application structure for larger re-frame apps](https://github.com/Day8/re-frame/blob/master/docs/Basic-App-Structure.md#larger-apps)
+* [redux comparison](https://www.learnreframe.com/)
+* [todomvc example](https://github.com/Day8/re-frame/tree/master/examples/todomvc)
+* [simple re-frame example](https://github.com/Day8/re-frame/blob/master/examples/simple/project.clj)
