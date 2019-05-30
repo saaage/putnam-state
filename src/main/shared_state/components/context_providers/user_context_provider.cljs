@@ -17,6 +17,7 @@
 ;; Updater functions are only needed in cases where context needs to be writeable as well as readable   
 (defn update-user-context
   [current m]
+  "Takes the current state and an action map, and returns a new state value."
   (case (:type m)
     "LOGIN" {:username   (:username m)
              :privileges (:privileges m)}
@@ -29,14 +30,14 @@
 ;; context they want.
 (defnc user-context-provider
   [m]
-  "A component that provides descendants with the current user context."
+  "A React component that provides descendants with the current user context."
   (let [[context set-context] (use-reducer update-user-context default-user-context)]
     [:provider {:context user-context
                 :value   (merge context
                                 {:update-user-context set-context})}
      (:children m)]))
 
-;; NOTE: Steps 2 and 4 contain everything needed to create context for a tree of components
+;; NOTE: Steps 2 and 4 contain everything needed to create a context provider
 
 ;; This pattern also provides the ability to have entire component trees that do not contain context if they don't need
 ;; it. eg. sections of the app that don't require a user to be logged in.
